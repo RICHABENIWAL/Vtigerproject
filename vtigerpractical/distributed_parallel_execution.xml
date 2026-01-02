@@ -4,7 +4,7 @@
 	<test name="Test1">
 		<classes>
 			<class
-				name="com.comcast.crm.contacttest.CreateContactWithOrganisation" />
+				name="com.comcast.crm.contacttest.ContactTest" />
 
 		</classes>
 	</test> <!--
@@ -12,7 +12,7 @@
 
 	<test name="test2">
 		<classes>
-			<class name="com.comcast.crm.contacttest.ContactTest">
+			<class name="com.comcast.crm.contacttest.CreateContactWithSupportDate">
 			</class>
 		</classes>
 

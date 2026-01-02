@@ -3,7 +3,6 @@ package com.comcast.crm.basetest;
 import java.io.IOException;
 import java.sql.SQLException;
 
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -23,54 +22,53 @@ import com.comcast.crm.objectrepositoryutility.LoginPage;
 
 public class BaseClass {
 
-	//create  object
+	// create object
 	public DatabaseUtility dblib = new DatabaseUtility();
 	public FileUtility flib = new FileUtility();
 	public ExcelUtility elib = new ExcelUtility();
 	public JavaUtility jlib = new JavaUtility();
-	public WebDriver driver ;
+	public WebDriver driver;
 	public static WebDriver sdriver;
 
-	@BeforeSuite(groups= {"smoke","regression"})
+	@BeforeSuite(groups = { "smoke", "regression" })
 	public void configBS() throws SQLException {
-		
+
 		dblib.getConnection();
 		// CONNECT TO DB/REPORT CONFIG
 	}
 
-	@BeforeClass(groups= {"smoke","regression"})
+	@BeforeClass(groups = { "smoke", "regression" })
 	public void configBC() throws IOException {
-		String browser1 = flib.getDataFromProperties("browser");
-		
-		
-         if (browser1.equalsIgnoreCase("chrome")) {
+		String browser1 = System.getProperty("browser", flib.getDataFromProperties("browser"));
+
+		if (browser1.equalsIgnoreCase("chrome")) {
 			driver = new ChromeDriver();
 		} else if (browser1.equals("edge")) {
 			driver = new EdgeDriver();
 		} else {
 			driver = new ChromeDriver();
 		}
-         
-         sdriver=driver;
-         UtilityClassObject.setDriver(driver);
+
+		sdriver = driver;
+		UtilityClassObject.setDriver(driver);
 
 		// LAUNCH BROWSER
 
 	}
 
-	@BeforeMethod(groups= {"smoke","regression"})
+	@BeforeMethod(groups = { "smoke", "regression" })
 	public void configBM() throws IOException {
 		LoginPage loginpage = new LoginPage(driver);
-		String username = flib.getDataFromProperties("un");
-		String password = flib.getDataFromProperties("pw");
-		String url = flib.getDataFromProperties("url");
+		String username = System.getProperty("un", flib.getDataFromProperties("un"));
+		String password = System.getProperty("pw", flib.getDataFromProperties("pw"));
+		String url = System.getProperty("url", flib.getDataFromProperties("url"));
 		driver.get(url);
 		loginpage.login(username, password);
 
 		// LOGIN
 	}
 
-	@AfterMethod(groups= {"smoke","regression"})
+	@AfterMethod(groups = { "smoke", "regression" })
 	public void configAM() {
 		HomePage homepage = new HomePage(driver);
 		homepage.signOut();
@@ -78,18 +76,18 @@ public class BaseClass {
 
 	}
 
-	@AfterClass(groups= {"smoke","regression"})
+	@AfterClass(groups = { "smoke", "regression" })
 	public void configAC() {
 		driver.quit();
 		// CLOSE BROWSER
 	}
 
-	@AfterSuite(groups= {"smoke","regression"})
+	@AfterSuite(groups = { "smoke", "regression" })
 	public void configAS() {
 		dblib.closeDbConnection();
-		
+
 		// CLOSE DB/ REPORT BACKUP
-		
+
 	}
 
 }

@@ -9,7 +9,7 @@
 					<include name="createContact"></include>
 				</methods>
 			</class>
-			<class name="com.comcast.crm.orgtest.CreateOrganisation" >
+			<class name="com.comcast.crm.orgtest.CreateOrgWithIndustery" >
 			<methods>
 			<include name="loginTest"></include>
 			
