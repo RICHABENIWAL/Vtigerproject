@@ -5,7 +5,13 @@
     <classes>
       <class name="com.comcast.crm.contacttest.CreateContactWithOrganisation">
         <methods>
+          <include name="configBC"/>
+          <include name="configBS"/>
+          <include name="configAC"/>
+          <include name="configAS"/>
           <include name="loginTest"/>
+          <include name="configBM"/>
+          <include name="configAM"/>
         </methods>
       </class> <!-- com.comcast.crm.contacttest.CreateContactWithOrganisation -->
     </classes>

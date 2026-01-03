@@ -28,7 +28,7 @@ import com.mysql.cj.conf.DatabaseUrlContainer;
 public class CreateOrganisation {
 
 	
-	@Test(groups="regression")
+	@Test(groups="smoke")
 	public void loginTest() throws Throwable {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
