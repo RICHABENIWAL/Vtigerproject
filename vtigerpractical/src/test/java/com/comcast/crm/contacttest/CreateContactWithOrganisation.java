@@ -22,6 +22,7 @@ import com.comcast.crm.objectrepositoryutility.CreateContactPage;
 import com.comcast.crm.objectrepositoryutility.HomePage;
 import com.comcast.crm.objectrepositoryutility.OrganisationPage;
 import com.comcast.crm.objectrepositoryutility.SearchOrganisationPage;
+import com.comcast.crm.objectrepositoryutility.SearchOrganisationsPage;
 
 public class CreateContactWithOrganisation extends BaseClass {
 
@@ -44,7 +45,7 @@ public class CreateContactWithOrganisation extends BaseClass {
 		// switch to child window
 		WebDriverUtility weblib = new WebDriverUtility();
 		weblib.switchTabOnURL(driver, "module=Accounts");
-		SearchOrganisationPage searchorg = new SearchOrganisationPage(driver);
+		SearchOrganisationsPage searchorg = new SearchOrganisationsPage(driver);
 		searchorg.searchOrganisationInChild(orgname);
 
 		// switch to parent window

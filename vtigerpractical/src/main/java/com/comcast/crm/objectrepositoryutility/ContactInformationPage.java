@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 public class ContactInformationPage {
 	WebDriver driver;
@@ -24,6 +25,15 @@ public class ContactInformationPage {
 
 	@FindAll({@FindBy(xpath = "//input[@title='Delete [Alt+D]']"),@FindBy(name="Delete")})
 	private WebElement deletebuttonEdt;
+	
+
+	@FindBy(id = "mouseArea_Organization Name")
+	private WebElement orgnameEdt;
+
+	public WebElement getOrgname() {
+		return orgnameEdt;
+	}
+
 	
 	public WebElement getEditButton() {
 		return editbuttonEdt;
@@ -46,6 +56,12 @@ public class ContactInformationPage {
 		}else {
 			System.out.println("not verified");
 		}
+	}
+	
+	public void verifyOrgname(String orgname) {
+		String actualorgname = orgnameEdt.getText();
+		Assert.assertEquals(actualorgname, orgname);
+		
 	}
 	
 	

@@ -1,17 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="3" total="4" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-12-31T12:15:13 IST" name="Default suite" finished-at="2025-12-31T12:15:28 IST" duration-ms="15438">
+  <suite started-at="2026-01-03T10:23:09 IST" name="Default suite" finished-at="2026-01-03T10:23:24 IST" duration-ms="14999">
     <groups>
+      <group name="smoke">
+        <method signature="ContactTest.createContactTest()[pri:0, instance:com.comcast.crm.contacttest.ContactTest@175c2241]" name="createContactTest" class="com.comcast.crm.contacttest.ContactTest"/>
+      </group> <!-- smoke -->
     </groups>
-    <test started-at="2025-12-31T12:15:13 IST" name="Default test" finished-at="2025-12-31T12:15:28 IST" duration-ms="15438">
-      <class name="com.comcast.crm.contacttest.CreateContactWithSupportDate">
-        <test-method signature="loginTest()[pri:0, instance:com.comcast.crm.contacttest.CreateContactWithSupportDate@1a482e36]" started-at="2025-12-31T12:15:13 IST" name="loginTest" finished-at="2025-12-31T12:15:28 IST" duration-ms="15378" status="PASS">
+    <test started-at="2026-01-03T10:23:09 IST" name="Default test" finished-at="2026-01-03T10:23:24 IST" duration-ms="14999">
+      <class name="com.comcast.crm.contacttest.ContactTest">
+        <test-method is-config="true" signature="configBS()[pri:0, instance:com.comcast.crm.contacttest.ContactTest@175c2241]" started-at="2026-01-03T10:23:09 IST" name="configBS" finished-at="2026-01-03T10:23:09 IST" duration-ms="645" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginTest -->
-      </class> <!-- com.comcast.crm.contacttest.CreateContactWithSupportDate -->
+        </test-method> <!-- configBS -->
+        <test-method is-config="true" signature="configBC()[pri:0, instance:com.comcast.crm.contacttest.ContactTest@175c2241]" started-at="2026-01-03T10:23:10 IST" name="configBC" finished-at="2026-01-03T10:23:12 IST" duration-ms="2339" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- configBC -->
+        <test-method is-config="true" signature="configBM()[pri:0, instance:com.comcast.crm.contacttest.ContactTest@175c2241]" started-at="2026-01-03T10:23:12 IST" name="configBM" finished-at="2026-01-03T10:23:16 IST" duration-ms="4334" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- configBM -->
+        <test-method signature="createContactTest()[pri:0, instance:com.comcast.crm.contacttest.ContactTest@175c2241]" started-at="2026-01-03T10:23:16 IST" name="createContactTest" finished-at="2026-01-03T10:23:23 IST" duration-ms="6936" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createContactTest -->
+        <test-method is-config="true" signature="configAM()[pri:0, instance:com.comcast.crm.contacttest.ContactTest@175c2241]" started-at="2026-01-03T10:23:23 IST" name="configAM" finished-at="2026-01-03T10:23:24 IST" duration-ms="935" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- configAM -->
+        <test-method is-config="true" signature="configAC()[pri:0, instance:com.comcast.crm.contacttest.ContactTest@175c2241]" started-at="2026-01-03T10:23:24 IST" name="configAC" finished-at="2026-01-03T10:23:24 IST" duration-ms="344" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- configAC -->
+        <test-method is-config="true" signature="configAS()[pri:0, instance:com.comcast.crm.contacttest.ContactTest@175c2241]" started-at="2026-01-03T10:23:25 IST" name="configAS" finished-at="2026-01-03T10:23:25 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- configAS -->
+      </class> <!-- com.comcast.crm.contacttest.ContactTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

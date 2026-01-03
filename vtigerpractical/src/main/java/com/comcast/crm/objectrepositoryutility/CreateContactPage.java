@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.comcast.crm.genricutility.webdriverutility.WebDriverUtility;
+
 public class CreateContactPage {
 	
 	WebDriver driver;
@@ -25,6 +27,13 @@ public class CreateContactPage {
 	
 	@FindBy(xpath = "//input[@title='Save [Alt+S]']")
 	private WebElement savebuttonEdt;
+	
+	@FindBy(xpath = "//input[@name='account_name']/following-sibling::img")
+	private WebElement selectorgEdt;
+	
+	public WebElement getSelectOrg() {
+		return selectorgEdt;
+	}
 	
 	
 	public WebElement getContactEdt() {
@@ -49,6 +58,15 @@ public class CreateContactPage {
 		lastnameEdt.sendKeys(lastname);
 		savebuttonEdt.click();
 		
+	}
+	
+	public void createContactWithOrganisation(String orgname, String lastname) throws InterruptedException {
+		WebDriverUtility wlib = new WebDriverUtility();
+		wlib.waitForPageToLoad(driver);
+		contactEdt.click();
+		createcontactEdt.click();
+		lastnameEdt.sendKeys(lastname);
+		selectorgEdt.click();
 	}
 	
 	

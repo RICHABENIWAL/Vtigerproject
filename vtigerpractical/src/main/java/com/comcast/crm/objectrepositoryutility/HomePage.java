@@ -62,6 +62,10 @@ public class HomePage {
 		
 	}
 	
+	public void navigateToContact() {
+		contactslink.click();
+	}
+	
 	public void signOut() {
 		signoutimglink.click();
 		SignOutlink.click();
